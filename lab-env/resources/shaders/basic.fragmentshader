@@ -1,0 +1,18 @@
+#version 330 core
+
+// Interpolated by vertex shader
+in vec2 texCoord;
+
+// Output color
+out vec3 color;
+
+// Constat for the entire mesh
+uniform sampler2D texSampler;
+
+
+void main()
+{
+	vec3 pixelColor = vec3(1.0, 0.0, 0.0);
+	pixelColor = texture(texSampler, texCoord).rgb;
+	color = pixelColor;
+}
